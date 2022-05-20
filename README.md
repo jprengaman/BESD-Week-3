@@ -23,4 +23,5 @@ Coding Steps:
 - Create a method of your own that solves a problem. In comments, write what the method does and why you created it.
 
 
-[BESD Week 3 Coding Assignment.docx](https://github.com/jprengaman/BESD-Week-3/files/8744717/BESD.Week.3.Coding.Assignment.docx)
+
+[BESD Week 3 Coding Assignment (1).docx](https://github.com/jprengaman/BESD-Week-3/files/8744751/BESD.Week.3.Coding.Assignment.1.docx)
