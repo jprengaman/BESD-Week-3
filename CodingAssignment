@@ -1,0 +1,171 @@
+public class Assignment {
+
+  public static String concatenateWord(String word, int n) {
+    
+    String concatenateWord = "";
+    if(n < 1) {
+      return "This is not a valid number";
+    }
+    else {      
+    for(int i = 0; i < n; i++) {
+      concatenateWord += word;
+    }
+    return concatenateWord;
+    }
+  }
+  
+  public static String fullName(String firstName, String lastName) {
+    String fullName = firstName + " " + lastName;
+    return fullName;
+  }
+  
+  public static boolean sumArray(int[] arr) {
+    int sumInts = 0;
+    for(int i = 0; i < arr.length; i++) {
+      sumInts += arr[i];
+    }
+    return (sumInts > 100); 
+  }
+  
+  public static double averageArrayElements(double[] arr2) {
+    double total = 0;
+    for(int i = 0; i < arr2.length; i++) {
+      total += arr2[i];
+    }
+    double average = total / arr2.length;
+    return average;
+  }
+  
+  public static boolean averageArrays(double[] array1, double[] array2) {
+    double total1 = 0;
+    double total2 = 0;
+    for(int i = 0; i < array1.length; i++) {
+      total1 += array1[i];
+    }
+    for(int i = 0; i < array2.length; i++) {
+      total2 += array2[i];
+    }
+    return (total1 > total2);
+  }
+  
+  public static boolean willBuyDrink(boolean isHotOutside, double moneyInPocket) {
+    return (isHotOutside == true && moneyInPocket > 10.5);
+  }
+    
+  public static boolean walkDogs(int temperature, boolean isRaining, double hoursSinceLastWalk, double hoursUntilNextObligation) {
+    return (temperature < 100 && isRaining != true && hoursSinceLastWalk >= 8 && hoursUntilNextObligation >= 1.5);    
+  }
+  
+  
+  public static void main(String[] args) {
+
+    int[] ages = {3, 9, 23, 64, 2, 8, 28, 93};
+    System.out.println("First element subtracted from last element: " + (ages[ages.length - 1] - ages[0]));
+    
+// adding new age to end of original array
+    int[] ages2 = {3, 9, 23, 64, 2, 8, 28, 93, 43};
+    double sumAges = 0.0;
+    System.out.println("First element subtracted from last element of new array: " + (ages2[ages2.length - 1] - ages2[0]));
+    for(int i : ages2) {
+      sumAges += i;
+    }
+      double averageAge = sumAges / ages2.length;
+      System.out.println("Average of all elements in array: " + averageAge);
+    
+    
+    double totalLettersPerName = 0;
+    String[] names = {"Sam", "Tommy", "Tim", "Sally", "Buck", "Bob"};   
+    for(int i = 0; i < names.length; i++) {
+      totalLettersPerName += names[i].length();
+      }
+    System.out.println("Average number of letters per name: " + (totalLettersPerName / names.length));
+    
+    for(int i = 0; i < names.length; i++) {
+      System.out.print(names[i] + " ");
+    }
+    
+// added to clarify return in Console  
+    System.out.println("");
+    
+    
+    int[] nameLengths = new int[names.length];
+    for(int i = 0; i < names.length; i++) {
+      nameLengths[i] = names[i].length();
+    }
+    
+    int sumOfElements = 0;
+    for(int i = 0; i < nameLengths.length; i++) {
+      sumOfElements += nameLengths[i];
+    }
+    System.out.println(sumOfElements);
+    
+// Concatenated word method example
+    String word = "Hello";
+    int n = 3;
+    String concatenateWord = concatenateWord(word, n);
+    System.out.println(concatenateWord);
+    
+    
+// Full name method example
+    String firstName = "George";
+    String lastName = "Washington";
+    String fullName = fullName(firstName, lastName);
+    System.out.println(fullName);
+    
+  
+// Int array sum method example
+    int[] arr = {4, 8, 15, 16, 23, 42};
+    if(sumArray(arr) == true) {
+      System.out.println("The sum of the array is greater than 100.");
+    } else {
+      System.out.println("The sum of the array is less than or equal to 100.");
+    }
+    
+    
+// Double array average method example
+    double[] arr2 = {4, 8, 15, 16, 23, 42};
+      System.out.println("The average of the elements in the array is: " + averageArrayElements(arr2));
+        
+      
+// Two double arrays boolean method example
+      double[] array1 = {3, 5, 7, 9, 11};
+      double[] array2 = {2, 4, 8, 10, 12};
+      if(averageArrays(array1, array2) == true) {
+      System.out.println("The average of the elements in the first array is greater than the average of the elements in the second array.");
+      } else {
+      System.out.println("The average of the elements in the first array is less than or equal to the average of the elements in the second array.");
+      }
+      
+// Will buy drink method example
+      boolean isHotOutside = true;
+      double moneyInPocket = 8.50;
+      if(willBuyDrink(isHotOutside, moneyInPocket) == true) {
+        System.out.println("Yes, let's buy a drink.");
+      } else {
+        System.out.println("No, let's pass on that drink for now.");
+      }
+      
+/* Create your own method...
+ *  Should I take the dogs for a walk now?
+ *  Questions to answer...
+ *  Is it over 100 degrees outside? Is it raining? Has it been more than 8 hours since the dogs last went for a walk? Is my next obligation more than 90 minutes away?
+ *  If the temperature is over 100, I won't walk the dogs.
+ *  If it is raining outside, I won't walk the dogs.
+ *  The dogs don't need to go for a walk if they've already walked in the past 8 hours.
+ *  I need 90 minutes to make sure the dogs have a good walk prior to any other obligations.
+ *  If all of these things are in our favor, I will take the dogs for a walk. Otherwise, they're going to have to wait.
+ */ 
+      int temperature = 96;
+      boolean isRaining = false;
+      double hoursSinceLastWalk = 9.5;
+      double hoursUntilNextObligation = 2;
+      if(walkDogs(temperature, isRaining, hoursSinceLastWalk, hoursUntilNextObligation) == true) {
+        System.out.println("Come on boys, let's go for a walk.");
+      } else {
+        System.out.println("Settle down boys, it's not time to walk yet.");
+      }
+      
+      
+      
+    }
+}
